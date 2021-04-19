@@ -17,7 +17,7 @@
 import Todos from './components/Todos.vue'
 import AddTodo from './components/AddTodo.vue'
 import FilterTodos from './components/FilterTodos.vue'
-import '../public/scss/main.scss'
+import '../public/css/main.min.css'
 
 export default {
   name: 'App',
