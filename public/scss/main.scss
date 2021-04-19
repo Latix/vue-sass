@@ -1,0 +1,38 @@
+@import './config';
+
+.todos__container
+{
+  width: 80%;
+  margin: 4em auto;
+}
+
+.strip {
+    position: fixed;
+    top: 0;
+    height: 4px;
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    /* align-items: center; */
+    z-index: 999;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    
+    .box:first-child {
+        flex: 0.3;
+        background-color: rgb(121, 36, 47);
+    }
+
+    .box:nth-child(2) {
+        flex: 0.5;
+        background-color: rgb(221, 36, 47);
+    }
+
+    .box:last-child{
+        flex: 0.2;
+        background-color: rgb(9, 46, 58);
+    }
+}
