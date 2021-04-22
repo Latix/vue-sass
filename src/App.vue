@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div class="strip animating">
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
     </div>
     <div class="woven-container">
       <div class="woven-container__header animating">
