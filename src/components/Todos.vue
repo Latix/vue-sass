@@ -1,7 +1,7 @@
 <template>
   <h3>Todos</h3>
   <div class="legend">
-        <span>Double click to mark as complete</span>
+        <span>Double click to mark as complete {{ app_name }}</span>
         <span>
             <span class="incomplete-box"></span> = Incomplete
         </span>
@@ -24,10 +24,15 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-
+import { mapGetters, mapActions, mapState } from 'vuex';
+import { generateName, generateAge } from '@/filter';
 export default {
     name: 'Todos',
+    data() {
+      return {
+        app_name: process.env.VUE_APP_NAME
+      }
+    },
     methods: {
         ...mapActions(["fetchTodos", "deleteTodo", "updateTodo"]),
         onDblClick (todo) {
@@ -38,11 +43,17 @@ export default {
             }
 
             this.updateTodo(updTodo);
-        }
+        },
+        generateName: generateName,
+        age: generateAge
     },
-    computed: mapGetters(['allTodos']),
+    computed: {
+      ...mapGetters(['allTodos']),
+      ...mapState(['todos'])
+    },
     created() {
         this.fetchTodos();
+        // console.log(this.$store.state.todos.todos.length);
     }
 }
 </script>
