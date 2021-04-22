@@ -1,9 +1,16 @@
 <template>
   <div class="container">
-    <div class="strip animate__animated animate__shakeX animate__slower animate__infinite	infinite">
+    <div class="strip animating">
       <div class="box"></div>
       <div class="box"></div>
       <div class="box"></div>
+    </div>
+    <div class="woven-container">
+      <div class="woven-container__header animating">
+        <h4>Header</h4>
+        <p>Welcome to the header</p>
+      </div>
+      <div class="woven-container__content">Content</div>
     </div>
     <div class="todos__container">
       <AddTodo />

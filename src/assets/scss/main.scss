@@ -1,5 +1,40 @@
 @import './config';
 
+.woven-container
+{
+    display: grid;
+    width: 100%;
+    margin: 1em 0;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 3.5em 3em;
+    grid-gap: 2em 2em;
+    // justify-content: center;
+    // align-content: center;
+
+    &__header
+    {
+        background-color: red;
+        // padding: 1em 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        h4 {
+            margin-left: 1em;
+        }
+
+        p {
+            margin-right: 1em;
+        }
+    }
+
+    &__content
+    {
+        background-color: blue;
+    }
+}
+
 .todos__container
 {
   width: 80%;
@@ -34,5 +69,80 @@
     .box:last-child{
         flex: 0.2;
         background-color: rgb(9, 46, 58);
+    }
+}
+
+.animating {
+
+    .box:first-child {
+        animation: burberry-first-child 1s infinite alternate;
+    }
+
+    .box:nth-child(2) {
+        animation: burberry-second-child 1s infinite alternate;
+    }
+
+    .box:last-child {
+        animation: burberry-last-child 1s infinite alternate;
+    }
+
+    h4 {
+        animation: jump-title 1s linear infinite alternate;
+    }
+}
+
+@keyframes burberry-first-child {
+    0% {
+        flex: 0.1;
+    }
+
+    50% {
+        flex: 0.2;
+    }
+
+    to {
+        flex: 0.3;
+    }
+}
+
+@keyframes burberry-second-child {
+    0% {
+        flex: 0.5;
+    }
+
+    50% {
+        flex: 0.3;
+    }
+
+    to {
+        flex: 0.5;
+    }
+}
+
+@keyframes burberry-last-child {
+    0% {
+        flex: 0.4;
+    }
+
+    50% {
+        flex: 0.5;
+    }
+
+    to {
+        flex: 0.2;
+    }
+}
+
+@keyframes jump-title {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-0.5em);
+    }
+
+    to {
+        transform: translateY(0);
     }
 }
